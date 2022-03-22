@@ -1,3 +1,4 @@
+import "./style/index.scss";
 const elevenShieldRecipe = {
   letherStrips: 2,
   ironIngot: 1,

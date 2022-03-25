@@ -12,12 +12,21 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
+  output: {
+    filename: "./assets/js/[fullhash].[name].js",
+    assetModuleFilename: "./assets/images / [hash][ext][query]",
+    clean: true,
+  },
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset",
+      },
+      {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
+          { loader: MiniCssExtractPlugin.loader, options: { publicPath: "" } },
           "css-loader",
           "postcss-loader",
           "sass-loader",

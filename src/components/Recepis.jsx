@@ -15,10 +15,10 @@ const elvanGauntLetsRecipe = {
 console.log(elevenShieldRecipe);
 console.log(elvanGauntLetsRecipe);
 
-const Recipes = () => {
+const Recipes = (props) => {
   const [recipe, setRecipe] = useState({});
   return (
-    <div>
+    <div className={props.className}>
       <h3>Current Recipe : </h3>
       <button onClick={() => setRecipe(elevenShieldRecipe)}>
         Elven Shield Recipe

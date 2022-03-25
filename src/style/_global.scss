@@ -8,7 +8,74 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  // background: rgba(202, 202, 202, 0.342);
+  width: 90%;
+  margin: auto;
 }
 button {
   font-size: 1.5rem;
+}
+.hadiah::after {
+  border: 3px solid blue;
+}
+.tal {
+  display: flex;
+  flex-direction: row;
+  background: rgb(199, 199, 199);
+
+  width: 100%;
+  justify-content: space-around;
+  margin: auto;
+}
+.totalHadiah {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  cursor: pointer;
+}
+.hadiah:hover {
+  margin-top: -30px;
+  margin-left: -30px;
+  width: 300px;
+  position: relative;
+}
+.back-hitam {
+  background: rgba(136, 136, 136, 0.7);
+  padding: 30px;
+  margin: 15px 0 15px 0;
+}
+.figHadiah {
+  margin-top: -40px;
+  font-size: 20px;
+  color: black;
+}
+.munculHadiah {
+  display: "none";
+}
+.munculHadiah {
+  width: 800px;
+  height: 500px;
+  display: flex;
+  // display: none;
+}
+.bungkushadiah {
+  position: fixed;
+  background: linear-gradient(rgb(87, 65, 65), rgb(103, 71, 54));
+  padding: 0 60px 0 60px;
+  border-radius: 15px;
+  box-shadow: 1px 1px 1px 10px;
+  left: 50%;
+  top: 30px;
+  transform: translate(-50%);
+}
+#penghalanghadiah {
+  display: none;
+  background-color: rgba(194, 191, 191, 0.8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
 }

@@ -1,6 +1,9 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 const loader = require("sass-loader");
+const HtmlWEbpackPlugin = require("html-webpack-plugin");
 let mode = "development";
+
 if (process.env.NODE_ENV === "production") {
   mode = "production";
 }
@@ -8,11 +11,17 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
   mode: mode,
   devtool: false,
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWEbpackPlugin({
+      template: "./src/template.html",
+    }),
+  ],
   resolve: {
     extensions: [".js", ".jsx"],
   },
   output: {
+    path: path.resolve(__dirname, "dist"),
     filename: "./assets/js/[fullhash].[name].js",
     assetModuleFilename: "./assets/images / [hash][ext][query]",
     clean: true,
